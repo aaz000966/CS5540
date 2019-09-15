@@ -1,0 +1,28 @@
+ls -l:
+total 36
+-rw-r--r-- 1 zakari zakari  100 Sep 15 12:32 container_tokens
+-rwx------ 1 zakari zakari  733 Sep 15 12:32 default_container_executor.sh
+-rwx------ 1 zakari zakari  678 Sep 15 12:32 default_container_executor_session.sh
+lrwxrwxrwx 1 zakari zakari  109 Sep 15 12:32 job.jar -> /tmp/hadoop-zakari/nm-local-dir/usercache/zakari/appcache/application_1568562303732_0005/filecache/11/job.jar
+lrwxrwxrwx 1 zakari zakari  109 Sep 15 12:32 job.xml -> /tmp/hadoop-zakari/nm-local-dir/usercache/zakari/appcache/application_1568562303732_0005/filecache/13/job.xml
+drwxrwxr-x 2 zakari zakari 4096 Sep 15 12:32 jobSubmitDir
+-rwx------ 1 zakari zakari 5146 Sep 15 12:32 launch_container.sh
+drwx--x--- 2 zakari zakari 4096 Sep 15 12:32 tmp
+find -L . -maxdepth 5 -ls:
+   664860      4 drwx--x---   4 zakari   zakari       4096 Sep 15 12:32 .
+   664903      4 drwx--x---   2 zakari   zakari       4096 Sep 15 12:32 ./tmp
+   664907      4 -rw-r--r--   1 zakari   zakari         52 Sep 15 12:32 ./.launch_container.sh.crc
+   664909      4 -rw-r--r--   1 zakari   zakari         16 Sep 15 12:32 ./.default_container_executor_session.sh.crc
+   664904      4 -rw-r--r--   1 zakari   zakari        100 Sep 15 12:32 ./container_tokens
+   664895      4 drwx------   2 zakari   zakari       4096 Sep 15 12:32 ./job.jar
+   664896    312 -r-x------   1 zakari   zakari     316570 Sep 15 12:32 ./job.jar/job.jar
+   664912      4 drwxrwxr-x   2 zakari   zakari       4096 Sep 15 12:32 ./jobSubmitDir
+   664892      4 -r-x------   1 zakari   zakari         34 Sep 15 12:32 ./jobSubmitDir/job.splitmetainfo
+   664898      4 -r-x------   1 zakari   zakari        119 Sep 15 12:32 ./jobSubmitDir/job.split
+   664911      4 -rw-r--r--   1 zakari   zakari         16 Sep 15 12:32 ./.default_container_executor.sh.crc
+   664908      4 -rwx------   1 zakari   zakari        678 Sep 15 12:32 ./default_container_executor_session.sh
+   664901    188 -r-x------   1 zakari   zakari     188931 Sep 15 12:32 ./job.xml
+   664906      8 -rwx------   1 zakari   zakari       5146 Sep 15 12:32 ./launch_container.sh
+   664910      4 -rwx------   1 zakari   zakari        733 Sep 15 12:32 ./default_container_executor.sh
+   664905      4 -rw-r--r--   1 zakari   zakari         12 Sep 15 12:32 ./.container_tokens.crc
+broken symlinks(find -L . -maxdepth 5 -type l -ls):

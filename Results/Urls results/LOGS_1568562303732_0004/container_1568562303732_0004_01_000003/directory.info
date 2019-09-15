@@ -1,0 +1,24 @@
+ls -l:
+total 32
+-rw-r--r-- 1 zakari zakari  129 Sep 15 12:23 container_tokens
+-rwx------ 1 zakari zakari  733 Sep 15 12:23 default_container_executor.sh
+-rwx------ 1 zakari zakari  678 Sep 15 12:23 default_container_executor_session.sh
+lrwxrwxrwx 1 zakari zakari  109 Sep 15 12:23 job.jar -> /tmp/hadoop-zakari/nm-local-dir/usercache/zakari/appcache/application_1568562303732_0004/filecache/11/job.jar
+lrwxrwxrwx 1 zakari zakari  109 Sep 15 12:23 job.xml -> /tmp/hadoop-zakari/nm-local-dir/usercache/zakari/appcache/application_1568562303732_0004/filecache/13/job.xml
+-rwx------ 1 zakari zakari 5336 Sep 15 12:23 launch_container.sh
+drwx--x--- 2 zakari zakari 4096 Sep 15 12:23 tmp
+find -L . -maxdepth 5 -ls:
+   664938      4 drwx--x---   3 zakari   zakari       4096 Sep 15 12:23 .
+   664939      4 drwx--x---   2 zakari   zakari       4096 Sep 15 12:23 ./tmp
+   664943      4 -rw-r--r--   1 zakari   zakari         52 Sep 15 12:23 ./.launch_container.sh.crc
+   664945      4 -rw-r--r--   1 zakari   zakari         16 Sep 15 12:23 ./.default_container_executor_session.sh.crc
+   664940      4 -rw-r--r--   1 zakari   zakari        129 Sep 15 12:23 ./container_tokens
+   664899      4 drwx------   2 zakari   zakari       4096 Sep 15 12:23 ./job.jar
+   664900    312 -r-x------   1 zakari   zakari     316570 Sep 15 12:23 ./job.jar/job.jar
+   664947      4 -rw-r--r--   1 zakari   zakari         16 Sep 15 12:23 ./.default_container_executor.sh.crc
+   664944      4 -rwx------   1 zakari   zakari        678 Sep 15 12:23 ./default_container_executor_session.sh
+   664905    188 -r-x------   1 zakari   zakari     188923 Sep 15 12:23 ./job.xml
+   664942      8 -rwx------   1 zakari   zakari       5336 Sep 15 12:23 ./launch_container.sh
+   664946      4 -rwx------   1 zakari   zakari        733 Sep 15 12:23 ./default_container_executor.sh
+   664941      4 -rw-r--r--   1 zakari   zakari         12 Sep 15 12:23 ./.container_tokens.crc
+broken symlinks(find -L . -maxdepth 5 -type l -ls):
