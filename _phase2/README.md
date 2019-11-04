@@ -12,6 +12,9 @@ In this phase, all groups are required to finish the following steps:
 first of all, we will insert our json file that has 1 million tweets into hdfs: 
 
 ![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20170746.png)
+
+it's the same as the last phase file but with more dataset
+
 ![tweets](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20110600.png)
 
 new tweets link: https://drive.google.com/open?id=11PLgbBBHmHiHzsFUft8u7SVTBos4-Fq8
