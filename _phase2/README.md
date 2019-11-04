@@ -1,49 +1,101 @@
-# CS5540
-Principles of Big Data Management 
-# https://github.com/aaz000966/CS5540
-# Hi!
-###  This is a brief of phase 1 completion required for class 5540 under the supervision of Dr. Praveen Rao.
+### CS5540
+### Principles of Big Data Management 
+### https://github.com/aaz000966/CS5540/tree/master/_phase2
+### Hello again
+###  This is a brief of phase 2 completion required for class 5540 under the supervision of Dr. Praveen Rao.
 
-At the start, let's have a look at the tweets collected as a single Json file that contains all the 100K tweets organized in records. each record represents a single tweet with the tags attached to it.
+In this phase, all groups are required to finish the following steps:
+* Figure out how to store the tweets in Spark SQL
+* Write interesting analytic queries to explore and understand the data – at least 10 queries (must be different conceptually)
+* Develop interesting visualizations (e.g., pie chart, heat map, bar graphs)
 
+first of all, we will insert our json file that has 1 million tweets into hdfs: 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20170746.png)
 ![tweets](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20110600.png)
 
-tweets jason file link: https://drive.google.com/file/d/1lfcBntP2U4oKjIIXWVUAPN2gw2wNt5qq/view?usp=sharing
+new tweets link: https://drive.google.com/open?id=11PLgbBBHmHiHzsFUft8u7SVTBos4-Fq8
 
-As a second task, we had to extract the URLs and hashtags from this Json file. We did that using python 
+next, time to start hadoop deamons
 
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20111156.png)
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20171217.png)
 
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20111242.png)
+for this phase, we will use zeppelin to make organized code blocks that connected to hadoop_home and Spark_hope to render everything in the shell
 
-*source code file is located under Source folder with the mentioned files*
+more on zeppelin 👍 https://zeppelin.apache.org/
 
-Next, we fired our virtual machine since we have hadoop and other utilities installed in there and start the daemons amd copied those extracted txt files to HDFS as shown below
+starting zeppelin daemons 
 
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20115120.png)
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20171306.png)
 
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20115156.png)
+zeppelin is now accessible through the web browser 
 
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20171415.png)
 
-later on, we started the wordcount example on Hadoop file system using the following command:
-
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20120710.png)
-
-same goes for hashtags:
-
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20123353.png)
-
-The result files can be found under Results on the code page
-
-Next, we ran the same functions on Spark using the python implementation:
-
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20131313.png)
-
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20131507.png)
+The notebook we've created 
+![](https://raw.githubusercontent.com/aaz000966/CS5540/master/_phase2/Doc/Annotation%202019-11-03%20171552.png)
 
 
-Result folders for both hadoop and spark:
+now let's start working on the dataset. fist of all, importing:
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20171518.png)
+Now, to run queries on apache zeppelin, we just need to specify the %SQL command at first. These are the following supported commands on zeppelin:
 
-![](https://raw.githubusercontent.com/aaz000966/CS5540/master/Documents/Annotation%202019-09-15%20131600.png)
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173729.png)
 
-please navigate to Code tab to find the claimed files. Thanks!
+now, let's start by querying the highest followed account using the follower_count record on our JSON file: 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20171951.png)
+
+in table form: 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20172004.png)
+
+next, we will see the highest languages used; English is dominating! 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20172019.png)
+
+original table 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20172040.png)
+
+next, the number of followers for grouped users count! it's obvious that the higher you go, the less you get! 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20172114.png)
+
+Next, number of tweets from verified account. only 10k tweets out of a million!
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20172551.png)
+
+Table:
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20172612.png)
+
+Next, the top location that users tweeting from. Brazil in the lead!
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173112.png)
+
+Table:
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173127.png)
+
+next, the most Favorited tweets
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173231.png)
+
+next, the most active accounts or the account with the highest number of tweets by names: 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173300.png)
+
+Next, account with the highest number of friends or followed accounts:
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173328.png)
+
+in a table for demonstration: 
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173350.png)
+
+lastly, tweets from an iPhone device vs non-iPhone devices (almost half!)
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173430.png)
+
+
