@@ -101,6 +101,11 @@ lastly, tweets from an iPhone device vs non-iPhone devices (almost half!)
 
 ![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/Annotation%202019-11-03%20173430.png)
 
+and lastly:
+
+![](https://github.com/aaz000966/CS5540/blob/master/_phase2/Doc/2019-11-15%20at%209.03.08%20PM.jpeg)
+
+
 
 To download the source code, Please follow this JSON file (zeppelin paragraph):
 https://github.com/aaz000966/CS5540/blob/master/_phase2/src/Phase2.json
